@@ -27,13 +27,13 @@ collision/margin = 0.08
 script/script = ExtResource( 1 )
 MOTION_SPEED = 140
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="player_Sprite" type="Sprite" parent="."]
 
 editor/display_folded = true
 texture = ExtResource( 2 )
 region_rect = Rect2( 0, 0, 32, 64 )
 
-[node name="LightOccluder2D" type="LightOccluder2D" parent="Sprite"]
+[node name="LightOccluder2D" type="LightOccluder2D" parent="player_Sprite"]
 
 occluder = SubResource( 2 )
 light_mask = 1
