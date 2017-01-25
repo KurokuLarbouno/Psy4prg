@@ -1,0 +1,87 @@
+[gd_scene load_steps=5 format=1]
+
+[ext_resource path="res://scripts/player2.gd" type="Script" id=1]
+[ext_resource path="res://image/killer.png" type="Texture" id=2]
+
+[sub_resource type="CapsuleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 10.0
+height = 20.0
+
+[sub_resource type="OccluderPolygon2D" id=2]
+
+closed = true
+cull_mode = 0
+polygon = Vector2Array( -3.64097, -1.51878, 2.65613, 1.56551, 3.81273, 1.56551, 7.6681, -0.876218, 10.2383, 0.922952, 8.82471, 4.77831, 8.95322, 9.79029, 12.0375, 15.3163, 12.0375, 17.758, 10.6239, 19.8142, 9.8528, 24.3121, 7.28256, 27.525, 7.02554, 30.3522, 5.22637, 31.1233, 2.3991, 30.8663, 3.17017, 28.039, 3.17017, 26.6254, 0.728445, 25.8543, -1.07072, 27.1394, -1.19924, 30.0952, -2.86989, 31.1233, -6.46823, 30.8663, -6.85377, 29.5811, -4.92609, 27.3964, -6.33972, 25.0832, -6.85377, 22.1274, -6.85377, 18.7861, -6.85377, 15.9589, -5.69716, 12.489, -3.12692, 9.9188, -2.48436, 6.96302, -2.22733, 4.26427, -3.25543, 1.56551 )
+
+[node name="player" type="KinematicBody2D"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 0.800729, 0, 0, 0.339819, 1.371, 27.1628 )
+shapes/0/trigger = false
+collision/layers = 2
+collision/mask = 1
+collision/margin = 0.08
+script/script = ExtResource( 1 )
+MOTION_SPEED = 140
+
+[node name="Sprite" type="Sprite" parent="."]
+
+editor/display_folded = true
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 32, 64 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Sprite"]
+
+occluder = SubResource( 2 )
+light_mask = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+transform/pos = Vector2( 1.371, 27.1628 )
+transform/scale = Vector2( 0.800729, 0.339819 )
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 0.25, 0.25 )
+limit/left = -10000000
+limit/top = -10000000
+limit/right = 10000000
+limit/bottom = 10000000
+drag_margin/h_enabled = true
+drag_margin/v_enabled = true
+smoothing/enable = true
+smoothing/speed = 5.0
+drag_margin/left = 0.01
+drag_margin/top = 0.01
+drag_margin/right = 0.01
+drag_margin/bottom = 0.01
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+
+enabled = false
+cast_to = Vector2( 0, 50 )
+layer_mask = 1
+type_mask = 15
+
+[node name="shootfrom" type="Position2D" parent="."]
+
+transform/pos = Vector2( 1.50247, 17.815 )
+
+[node name="player_area" type="Area2D" parent="."]
+
+input/pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+
+
