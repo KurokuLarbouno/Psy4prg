@@ -32,16 +32,16 @@ func _fixed_process(delta):
 		RayNode.set_rot(90)
 	
 
-	move(motion)
+	move(motion*MOTION_SPEED)
 	if is_colliding():#killer
-		move(motion*-0.1)
+		move(motion*-0.1*MOTION_SPEED)
 		if (Input.is_action_pressed("ui_up")):
 			motion -= Vector2(0, -1)
 			test_move (motion)
 			if test_move (motion):
 				motion += Vector2(0, -1)
 			else:
-				move(motion)
+				move(motion*MOTION_SPEED)
 	
 		if (Input.is_action_pressed("ui_down")):
 			motion -= Vector2(0, 1)
@@ -49,7 +49,7 @@ func _fixed_process(delta):
 			if test_move (motion):
 				motion += Vector2(0, 1)
 			else:
-				move(motion)
+				move(motion*MOTION_SPEED)
 			
 		if (Input.is_action_pressed("ui_left")):
 			motion -= Vector2(-1, 0)
@@ -57,14 +57,14 @@ func _fixed_process(delta):
 			if test_move (motion):
 				motion += Vector2(-1, 0)
 			else:
-				move(motion)
+				move(motion*MOTION_SPEED)
 		if (Input.is_action_pressed("ui_right")):
 			motion -= Vector2(1, 0)
 			
 			if test_move (motion):
 				motion += Vector2(1, 0)
 			else:
-				move(motion)#killer_END
+				move(motion*MOTION_SPEED)#killer_END
 	
 			
 		
