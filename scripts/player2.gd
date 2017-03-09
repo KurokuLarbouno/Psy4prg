@@ -24,9 +24,48 @@ func _fixed_process(delta):
 		motion += Vector2(-1, 0)
 	if (Input.is_action_pressed("ui_right")):
 		motion += Vector2(1, 0)
+<<<<<<< HEAD
 	
 	motion = motion.normalized()*MOTION_SPEED*delta
 	motion = move(motion)
+=======
+		RayNode.set_rot(90)
+	
+
+	move(motion)
+	if is_colliding():#killer
+		move(motion*-0.1)
+		if (Input.is_action_pressed("ui_up")):
+			motion -= Vector2(0, -1)
+			test_move (motion)
+			if test_move (motion):
+				motion += Vector2(0, -1)
+			else:
+				move(motion)
+	
+		if (Input.is_action_pressed("ui_down")):
+			motion -= Vector2(0, 1)
+		
+			if test_move (motion):
+				motion += Vector2(0, 1)
+			else:
+				move(motion)
+			
+		if (Input.is_action_pressed("ui_left")):
+			motion -= Vector2(-1, 0)
+			
+			if test_move (motion):
+				motion += Vector2(-1, 0)
+			else:
+				move(motion)
+		if (Input.is_action_pressed("ui_right")):
+			motion -= Vector2(1, 0)
+			
+			if test_move (motion):
+				motion += Vector2(1, 0)
+			else:
+				move(motion)#killer_END
+>>>>>>> origin/master
 	
 	# Make character slide nicely through the world
 	var slide_attempts = 1
