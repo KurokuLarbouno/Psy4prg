@@ -29,7 +29,6 @@ MOTION_SPEED = 140
 
 [node name="player_Sprite" type="Sprite" parent="."]
 
-editor/display_folded = true
 texture = ExtResource( 2 )
 region_rect = Rect2( 0, 0, 32, 64 )
 

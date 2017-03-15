@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 export var MOTION_SPEED = 140
+var name = "Player"
 var t
 var RayNode 
 var player_sprite
@@ -14,7 +15,7 @@ func _fixed_process(delta):
 	var shooting = Input.is_action_pressed("shoot")
 	
 	var motion = Vector2()
-	
+
 	#motion
 	
 	
@@ -76,7 +77,7 @@ func _fixed_process(delta):
 		var bullet = preload("res://scene/bullet.tscn").instance()
 		bullet.set_pos(get_node("shootfrom").get_global_pos())
 		get_node("../..").add_child(bullet)
-
+	
 	if(shooting != true):
 		prepared = true
 	
@@ -87,3 +88,10 @@ func _fixed_process(delta):
 	if(area.overlaps_area(trap)):
 		motion += Vector2(10,0)
 		
+	pass
+	
+#hitted condition
+func hit(obj):
+	print("I been hitted by")
+	print(obj)
+	pass

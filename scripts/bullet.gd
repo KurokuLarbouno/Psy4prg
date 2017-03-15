@@ -1,5 +1,5 @@
 extends Area2D
-
+var name = "nopsv"
 
 export var sp = 60
 var a 
@@ -23,3 +23,12 @@ func _fixed_process(delta):
 	
 	if(t>1000):
 		self.free()
+func _on_bullet_body_enter( body ):
+	
+	for i in range(body.get_groups().size()):
+		if(body.get_groups()[i]=="wall"):
+			t=1000
+		if(body.get_groups()[i]=="P2"):
+			body.hit(self)
+	
+	pass # replace with function body
