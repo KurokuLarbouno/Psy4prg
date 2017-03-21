@@ -1,12 +1,21 @@
 extends KinematicBody2D
-
+#---------------------------子彈部分
+export var BULLET_QUANTITY = 5
+var bulletQ
+export var BULLET_CHANGE_TME = 5
+var bulletT
+#----------------------------------
 export var MOTION_SPEED = 140
-var name = "Player"
 var t
 var RayNode 
 var player_sprite
-var prepared = false
+var prepared
 func _ready():
+	#---------------------------------
+	bulletQ = BULLET_QUANTITY
+	bulletT = BULLET_CHANGE_TME
+	prepared = true
+	#----------------------------------
 	set_fixed_process(true)
 	RayNode = get_node("RayCast2D")
 	
@@ -17,7 +26,6 @@ func _fixed_process(delta):
 	var motion = Vector2()
 
 	#motion
-	
 	
 	if (Input.is_action_pressed("ui_up")):
 		motion += Vector2(0, -1)
@@ -66,20 +74,28 @@ func _fixed_process(delta):
 				motion += Vector2(1, 0)
 			else:
 				move(motion)#killer_END
-	
-			
-		
-	
 	#shoot
 	t = delta
-	if(shooting and prepared):
+	
+	
+	if(shooting and prepared and bulletQ >= 0):#---------------可發射狀態
 		prepared = false
 		var bullet = preload("res://scene/bullet.tscn").instance()
 		bullet.set_pos(get_node("shootfrom").get_global_pos())
 		get_node("../..").add_child(bullet)
+		
+		bulletQ -= 1#------------------------------------------彈夾存入
+		pass
+	if(shooting != true):#-------------------------------------放手才可再射
+		if(bulletQ == 0): bulletQ = -1#------------------------進入倒數
+		if(bulletT <= 0):reset()#------------------------------重置
+		prepared = true#---------------------------------------回復可發射狀態
+		pass
 	
-	if(shooting != true):
-		prepared = true
+	if(bulletQ == -1):#----------------------------------------裝彈倒數
+		bulletT -= delta
+		pass
+	
 	
 	#trap
 	var trap = preload("res://scene/trap.scn").instance()
@@ -89,9 +105,9 @@ func _fixed_process(delta):
 		motion += Vector2(10,0)
 		
 	pass
-	
-#hitted condition
-func hit(obj):
-	print("I been hitted by")
-	print(obj)
+
+func reset():
+	prepared = true
+	bulletQ = BULLET_QUANTITY
+	bulletT = BULLET_CHANGE_TME
 	pass

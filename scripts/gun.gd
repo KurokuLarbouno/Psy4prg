@@ -12,6 +12,4 @@ func _fixed_process(delta):
 	pass
 #hitted condition
 func hit(obj):
-	print("I been hitted by")
-	print(obj)
 	pass
