@@ -9,4 +9,7 @@ func _ready():
 
 func _fixed_process(delta):
 	var shooting = Input.is_action_pressed("shoot")
-	
+	pass
+#hitted condition
+func hit(obj):
+	pass
