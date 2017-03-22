@@ -5,6 +5,9 @@ var bulletQ
 export var BULLET_CHANGE_TME = 5
 var bulletT
 #----------------------------------
+#---------------------------trap
+var bag_trap = []
+#----------------------------------
 export var MOTION_SPEED = 140
 var t
 var RayNode 
@@ -42,6 +45,17 @@ func _fixed_process(delta):
 	
 
 	move(motion)
+	
+		#add trap
+	if (Input.is_action_pressed("putTrap")):
+		if(bag_trap.size() != 0):
+			#print(get_node("../tarp1"))
+	
+			#print(get_node("shootfrom").get_global_pos())
+			get_node("../"+bag_trap[0]).set_pos(get_node("shootfrom").get_global_pos())
+			bag_trap.remove ( 0 )
+	
+	
 	if is_colliding():#killer
 		move(motion*-0.1)
 		if (Input.is_action_pressed("ui_up")):
@@ -111,3 +125,15 @@ func reset():
 	bulletQ = BULLET_QUANTITY
 	bulletT = BULLET_CHANGE_TME
 	pass
+
+	#trap
+	var trap = preload("res://scene/trap.scn").instance()
+	var area = preload("res://scene/player.tscn").instance()
+	area = get_node("player_area")
+	trap = get_node("../trap/trap_area")
+
+	#print(area)
+	#print(area.overlaps_area(trap))
+func add_trap(trap_kind):
+	bag_trap.append(trap_kind)
+	
