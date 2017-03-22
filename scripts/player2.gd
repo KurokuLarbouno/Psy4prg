@@ -29,18 +29,23 @@ func _fixed_process(delta):
 	var motion = Vector2()
 
 	#motion
+<<<<<<< HEAD
 	
+=======
+>>>>>>> refs/remotes/origin/master
 	if (Input.is_action_pressed("ui_up")):
 		motion += Vector2(0, -1)
-		RayNode.set_rotd(180)
 	if (Input.is_action_pressed("ui_down")):
 		motion += Vector2(0, 1)
-		RayNode.set_rotd(0)
 	if (Input.is_action_pressed("ui_left")):
 		motion += Vector2(-1, 0)
-		RayNode.set_rot(-90)
 	if (Input.is_action_pressed("ui_right")):
 		motion += Vector2(1, 0)
+<<<<<<< HEAD
+	
+	motion = motion.normalized()*MOTION_SPEED*delta
+	motion = move(motion)
+=======
 		RayNode.set_rot(90)
 	
 
@@ -88,6 +93,18 @@ func _fixed_process(delta):
 				motion += Vector2(1, 0)
 			else:
 				move(motion)#killer_END
+<<<<<<< HEAD
+=======
+>>>>>>> origin/master
+	
+	# Make character slide nicely through the world
+	var slide_attempts = 1
+	while(is_colliding() and slide_attempts > 0):
+		motion = get_collision_normal().slide(motion)
+		motion = move(motion)
+		slide_attempts -= 1
+	
+>>>>>>> refs/remotes/origin/master
 	#shoot
 	t = delta
 	
@@ -112,6 +129,7 @@ func _fixed_process(delta):
 	
 	
 	#trap
+<<<<<<< HEAD
 	var trap = preload("res://scene/trap.scn").instance()
 	var area = preload("res://scene/player.tscn").instance()
 	area = get_node("player_area")
@@ -137,3 +155,23 @@ func reset():
 func add_trap(trap_kind):
 	bag_trap.append(trap_kind)
 	
+=======
+
+
+
+
+
+func _on_tarp_area_enter( area ):
+	print("hi")
+	pass # replace with function body
+
+
+func _on_tarp_area_exit( area ):
+	print("hi")
+	pass # replace with function body
+
+
+func _on_tarp_body_enter( body ):
+	print("hi")
+	pass # replace with function body
+>>>>>>> refs/remotes/origin/master
