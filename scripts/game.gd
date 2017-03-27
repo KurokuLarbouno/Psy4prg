@@ -1,10 +1,14 @@
 extends Node2D
 
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
+
+var bullet_sp = 60
+var is_clicked = false
 
 func _ready():
-	# Called every time the node is added to the scene.
-	# Initialization here
+	set_fixed_process(true)
+	pass
+func _fixed_process(delta):
+	if(Input.is_action_pressed("speedup")):bullet_sp = 200
+	if(Input.is_action_pressed("speeddown")):bullet_sp = 30
+	
 	pass
