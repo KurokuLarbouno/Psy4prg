@@ -25,8 +25,8 @@ collision/layers = 2
 collision/mask = 1
 collision/margin = 0.08
 script/script = ExtResource( 1 )
-BULLET_QUANTITY = 5
-BULLET_CHANGE_TME = 2
+BULLET_QUANTITY = 4
+BULLET_CHANGE_TME = 1
 MOTION_SPEED = 140
 
 [node name="player_Sprite" type="Sprite" parent="."]

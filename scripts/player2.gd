@@ -5,9 +5,9 @@ extends KinematicBody2D
 #	BULLET_CHANGE_TME
 #-----------------------------------
 #---------------------------子彈部分
-export var BULLET_QUANTITY = 5
+export var BULLET_QUANTITY = 4
 var bulletQ		#子彈數紀錄
-export var BULLET_CHANGE_TME = 5
+export var BULLET_CHANGE_TME = 1
 var bulletT		#換彈時間紀錄
 var prepared
 #----------------------------------
@@ -23,6 +23,7 @@ var RayNode
 
 
 func _ready():
+	
 	reset()#-----------------------------------子彈部分
 	set_fixed_process(true)	#------------------設定loop
 	player_sprite = get_node("player_Sprite")#-實現陷阱改player色效果
@@ -121,6 +122,7 @@ func _fixed_process(delta):
 		pass
 	if(bulletQ == -1):#----------------------------------------裝彈倒數
 		bulletT -= delta
+		print(bulletT)
 		if(bulletT <= 0):reset()#------------------------------重置
 		pass
 	

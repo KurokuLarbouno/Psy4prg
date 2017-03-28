@@ -26,7 +26,6 @@ func _on_bullet_body_enter( body ):
 		if(body.get_groups()[i]=="wall"):
 			t=1000#結束子彈
 		if(body.get_groups()[i]=="player"):
-			body.hit(self)
 			t=1000#結束子彈
 	
 	pass # replace with function body
