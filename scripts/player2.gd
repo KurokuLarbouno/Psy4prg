@@ -14,6 +14,7 @@ var prepared
 #---------------------------陷阱部分
 var bag_trap = []
 var player_sprite
+var putTrap_flag = false
 #----------------------------------
 #---------------------------移動部分
 export var MOTION_SPEED = 140
@@ -54,12 +55,17 @@ func _fixed_process(delta):
 	
 #-----------------------------------------------陷阱
 	if (Input.is_action_pressed("putTrap")):
-		if(bag_trap.size() != 0):
-			#print(get_node("../tarp1"))
-	
-			#print(get_node("shootfrom").get_global_pos())
-			get_node("../"+bag_trap[0]).set_pos(get_node("shootfrom").get_global_pos())
-			bag_trap.remove ( 0 )
+		
+		if(!putTrap_flag):
+			putTrap_flag = true
+			if(bag_trap.size() != 0):
+				#print(get_node("../tarp1"))
+				
+				#print(get_node("shootfrom").get_global_pos())
+				get_node("../"+bag_trap[0]).set_pos(get_node("shootfrom").get_global_pos())
+				bag_trap.remove ( 0 )
+	if (!Input.is_action_pressed("putTrap")):
+		putTrap_flag = false
 #---------------------------------------------------	
 #-----------------------------------------------牆壁碰撞	
 	if is_colliding():

@@ -1,7 +1,11 @@
 extends Node2D
 
 
+#---------------------------trap
+var generate_points_num = []#生成點編號
+#----------------------------------
 var bullet_sp = 60
+
 var is_clicked = false
 
 func _ready():

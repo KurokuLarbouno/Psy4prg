@@ -14,6 +14,7 @@ var prepared
 #---------------------------陷阱部分
 var bag_trap = []
 var player_sprite
+var putTrap_flag = false
 #----------------------------------
 #---------------------------移動部分
 export var MOTION_SPEED = 140
@@ -54,17 +55,22 @@ func _fixed_process(delta):
 	
 #-----------------------------------------------陷阱
 	if (Input.is_action_pressed("putTrap")):
-		if(bag_trap.size() != 0):
-			#print(get_node("../tarp1"))
-	
-			#print(get_node("shootfrom").get_global_pos())
-			get_node("../"+bag_trap[0]).set_pos(get_node("shootfrom").get_global_pos())
-			bag_trap.remove ( 0 )
+		
+		if(!putTrap_flag):
+			putTrap_flag = true
+			if(bag_trap.size() != 0):
+				#print(get_node("../tarp1"))
+				
+				#print(get_node("shootfrom").get_global_pos())
+				get_node("../"+bag_trap[0]).set_pos(get_node("shootfrom").get_global_pos())
+				bag_trap.remove ( 0 )
+	if (!Input.is_action_pressed("putTrap")):
+		putTrap_flag = false
 #---------------------------------------------------	
 #-----------------------------------------------牆壁碰撞	
 	if is_colliding():
 		move(motion*-0.1)
-		if (Input.is_action_pressed("ui_up_2")):
+		if (Input.is_action_pressed("ui_up")):
 			motion -= Vector2(0, -1)
 			test_move (motion)
 			if test_move (motion):
@@ -72,7 +78,7 @@ func _fixed_process(delta):
 			else:
 				move(motion)
 	
-		if (Input.is_action_pressed("ui_down_2")):
+		if (Input.is_action_pressed("ui_down")):
 			motion -= Vector2(0, 1)
 		
 			if test_move (motion):
@@ -80,14 +86,14 @@ func _fixed_process(delta):
 			else:
 				move(motion)
 			
-		if (Input.is_action_pressed("ui_left_2")):
+		if (Input.is_action_pressed("ui_left")):
 			motion -= Vector2(-1, 0)
 			
 			if test_move (motion):
 				motion += Vector2(-1, 0)
 			else:
 				move(motion)
-		if (Input.is_action_pressed("ui_right_2")):
+		if (Input.is_action_pressed("ui_right")):
 			motion -= Vector2(1, 0)
 			
 			if test_move (motion):
