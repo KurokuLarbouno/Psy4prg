@@ -14,7 +14,7 @@ var remove_index = []#for remove generate_points_num
 var self_generate_points_num #此陷阱生成點編號
 var count = 0 #count the exit times
 var random_num #隨機變數
-var QAQ = 1
+
 var random_num_flag = false#隨機變數flag
 var image = load("res://image/banana.png")
 func _ready():
@@ -89,6 +89,8 @@ func _on_trap_area_body_enter( body ):
 							trap_start = false
 						#trap effect
 							body.player_sprite.set_modulate(Color(255.0,1.0,1.0))
+							if self.get_name() == "trap1":
+								body.banana_trap_effect_flag = true
 						#trap effect END
 							self.set_pos(get_node("../trash").get_global_pos())
 							t=0

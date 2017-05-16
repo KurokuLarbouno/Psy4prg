@@ -140,7 +140,7 @@ func _fixed_process(delta):
 		pass
 #---------------------------------------------------------------死亡
 	if(die): die(delta)
-#------------------------------------------------------------------	
+#------------------------------------------------------------------
 
 
 
@@ -153,6 +153,7 @@ func reset():
 	bulletT = BULLET_CHANGE_TME
 	flashT = FLASH_TIME
 	toggleT = TOGGLE_TIME
+	aliveT = ALIVE_TIME
 	get_owner().health[1] = 100
 	#self.set_pos()
 	
@@ -166,19 +167,23 @@ func reload():
 #---------------------------------------------------------------------
 #--------------------------------------------------------------無敵
 func die(delta):
-	flashT -= delta
-	if(flashT >= 0):#閃爍時間
-		toggleT -= delta
-		if (toggleT <= 0 ):
-			set_hidden(visible_state)
-			visible_state = !visible_state
-			toggleT = TOGGLE_TIME
+	aliveT -= delta
+	#-----死亡動作
+	if(aliveT >= 0):
+		flashT -= delta
+		if(flashT >= 0):#閃爍時間
+			toggleT -= delta
+			if (toggleT <= 0 ):
+				set_hidden(visible_state)
+				visible_state = !visible_state
+				toggleT = TOGGLE_TIME
+				pass
+		else: 
+			set_hidden(false)
+			visible_state = true
+			die = false
+			reset()
 			pass
-	else: 
-		set_hidden(false)
-		visible_state = true
-		die = false
-		reset()
 		pass
 	pass
 #----------------------------------------------------------------------

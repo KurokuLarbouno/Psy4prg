@@ -18,7 +18,12 @@ var  bag_trap_switch_num = 0
 var putTrap_flag = false
 var ui_Q_trap_switch_flag = false
 var ui_E_trap_switch_flag = false
+var banana_trap_effect_flag = false
+var banana_time  #香蕉滑行時間
+var banana_time_control = 0.5 #香蕉滑行時間控制
+var banana_time_flag = false
 var trap_node_register
+var banana_save_motion = Vector2()#保留移動方向用
 #----------------------------------
 #---------------------------移動部分
 export var MOTION_SPEED = 140
@@ -53,6 +58,21 @@ func _fixed_process(delta):
 	
 	
 #-----------------------------------------------陷阱
+	
+	if motion != Vector2(0, 0) && !banana_trap_effect_flag:
+		banana_save_motion = motion
+	if banana_trap_effect_flag:#香蕉特效
+		if !banana_time_flag:
+			banana_time = 0
+			banana_time_flag = !banana_time_flag
+		
+		if  banana_time >banana_time_control:
+			banana_time_flag = !banana_time_flag
+			banana_trap_effect_flag = false
+		else: 
+			banana_time += delta
+			move(banana_save_motion*35*delta/banana_time_control)
+	
 	if (Input.is_action_pressed("ui_E_trap_switch")):
 		if(!ui_E_trap_switch_flag):
 			ui_E_trap_switch_flag = true
@@ -119,6 +139,7 @@ func _fixed_process(delta):
 	#get_node("../"+bag_trap[0]).set_pos(get_node("shootfrom").get_global_pos())
 	#bag_trap.remove ( 0 )
 	#-----------------陷阱switch END
+#---------------------------------------------------陷阱 END
 #---------------------------------------------------	
 #-----------------------------------------------牆壁碰撞	
 	if is_colliding():
