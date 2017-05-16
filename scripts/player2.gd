@@ -54,7 +54,7 @@ func _fixed_process(delta):
 		motion += Vector2(1, 0)
 	
 	motion = motion.normalized()*MOTION_SPEED*delta
-	motion = move(motion)
+	move(motion)
 	
 	
 #-----------------------------------------------陷阱
