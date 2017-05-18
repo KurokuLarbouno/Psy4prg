@@ -20,5 +20,8 @@ func _fixed_process(delta):
 	
 	if(Input.is_action_pressed("speedup")):bullet_sp = 200
 	if(Input.is_action_pressed("speeddown")):bullet_sp = 30
-	
+	var sprite = get_tree().get_nodes_in_group("sprite")
+	for i in range(sprite.size()):
+		var pos = sprite[i].get_global_pos()
+		sprite[i].set_z(pos.y)
 	pass

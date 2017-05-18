@@ -14,7 +14,8 @@ var remove_index = []#for remove generate_points_num
 var self_generate_points_num #此陷阱生成點編號
 var count = 0 #count the exit times
 var random_num #隨機變數
-
+var red_time#變紅時間
+var slow_time#變慢時間
 var random_num_flag = false#隨機變數flag
 var image = load("res://image/banana.png")
 func _ready():
@@ -22,20 +23,26 @@ func _ready():
 		self.get_child(0).set_texture(image)
 		
 	set_fixed_process(true)
+	slow_time = 100000000
 	t = 100000000
-	
+	red_time = 100000000
 	connect("body_enter", self, "_on_trap_area_body_enter")#start signal
 	connect("body_exit", self, "_on_trap_body_exit")#start signal
 	pass
 func _fixed_process(delta):
 	
-	t +=1
-	if(t == 100):
+	t +=delta
+	red_time +=1
+	slow_time += delta
+	
+	if(red_time <= 20):
 	#trap effect reset
-		body_save.player_sprite.set_modulate(Color(1.0,1.0,1.0))#trap effect
-
+		body_save.player_sprite.set_modulate(Color(255/(12.75*red_time),1.0,1.0))#trap effect
+	
+	if slow_time >= 3 and slow_time < 4:#變慢復原
+		body_save.MOTION_SPEED = 140
 	#trap effect reset END
-	if(t == 150):#陷阱重新生成
+	if(t >= 5 && t<6):#陷阱重新生成
 		
 		
 		#randi()%4+1   <---4是生成點的編號(數量)
@@ -55,6 +62,8 @@ func _fixed_process(delta):
 		self.set_gravity( int(random_num) )
 		self.set_pos(get_node("../generate_points"+random_num).get_global_pos())
 		t = 100000000
+		red_time = 100000000
+		slow_time = 100000000
 		count = 0
 		trap_switch = false
 		trap_start = false
@@ -89,11 +98,16 @@ func _on_trap_area_body_enter( body ):
 							trap_start = false
 						#trap effect
 							body.player_sprite.set_modulate(Color(255.0,1.0,1.0))
+							if self.get_name() == "trap":
+								slow_time = 0
+								body.MOTION_SPEED = 70
+								get_parent().get_parent().health[0] -= 5
 							if self.get_name() == "trap1":
 								body.banana_trap_effect_flag = true
 						#trap effect END
 							self.set_pos(get_node("../trash").get_global_pos())
 							t=0
+							red_time = 0
 							count = 0
 	pass # replace with function body
 

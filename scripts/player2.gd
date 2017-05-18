@@ -28,8 +28,24 @@ var banana_save_motion = Vector2()#保留移動方向用
 #---------------------------移動部分
 export var MOTION_SPEED = 140
 var t
+#---------------------------動畫
+var anim
+var new_anim
+#---------------------------血量
+export var health = 100
 #----------------------------------
+#----------------------------------死亡及無敵及受擊
 var die = false
+var hurt_flag = false
+var TOGGLE_TIME = 0.1#閃爍頻率
+var FLASH_TIME = 3#無敵時間
+var LITTLE_FLASH_TIME = 0.5#受擊無敵時間
+var ALIVE_TIME = 2#重生時間
+var toggleT#閃爍時間紀錄
+var flashT#無敵時間紀錄
+var LflashT#受擊無敵時間紀錄
+var aliveT#重生時間紀錄
+var visible_state = true
 
 func _ready():
 	
@@ -46,17 +62,31 @@ func _fixed_process(delta):
 	
 	if (Input.is_action_pressed("ui_up")):
 		motion += Vector2(0, -1)
-	if (Input.is_action_pressed("ui_down")):
+		new_anim = "walk"
+	elif (Input.is_action_pressed("ui_down")):
 		motion += Vector2(0, 1)
-	if (Input.is_action_pressed("ui_left")):
+		new_anim = "walk"
+	elif (Input.is_action_pressed("ui_left")):
 		motion += Vector2(-1, 0)
-	if (Input.is_action_pressed("ui_right")):
+		new_anim = "walk_left"
+	elif (Input.is_action_pressed("ui_right")):
 		motion += Vector2(1, 0)
-	
+		new_anim = "walk_right"
+	else:
+		new_anim = "stop"
 	motion = motion.normalized()*MOTION_SPEED*delta
 	move(motion)
 	
-	
+	var slide_attempts = 1
+	while(is_colliding() and slide_attempts > 0):
+		motion = get_collision_normal().slide(motion)
+		motion = move(motion*1.5)
+		slide_attempts -= 1
+#-----------------------------------------------動畫
+	if (new_anim != anim):
+		anim = new_anim
+		get_node("player_Sprite/anim").play(anim)
+		
 #-----------------------------------------------陷阱
 	
 	if motion != Vector2(0, 0) && !banana_trap_effect_flag:
@@ -142,38 +172,6 @@ func _fixed_process(delta):
 #---------------------------------------------------陷阱 END
 #---------------------------------------------------	
 #-----------------------------------------------牆壁碰撞	
-	if is_colliding():
-		move(motion*-0.1)
-		if (Input.is_action_pressed("ui_up")):
-			motion -= Vector2(0, -1)
-			test_move (motion)
-			if test_move (motion):
-				motion += Vector2(0, -1)
-			else:
-				move(motion)
-	
-		if (Input.is_action_pressed("ui_down")):
-			motion -= Vector2(0, 1)
-		
-			if test_move (motion):
-				motion += Vector2(0, 1)
-			else:
-				move(motion)
-			
-		if (Input.is_action_pressed("ui_left")):
-			motion -= Vector2(-1, 0)
-			
-			if test_move (motion):
-				motion += Vector2(-1, 0)
-			else:
-				move(motion)
-		if (Input.is_action_pressed("ui_right")):
-			motion -= Vector2(1, 0)
-			
-			if test_move (motion):
-				motion += Vector2(1, 0)
-			else:
-				move(motion)#killer_END
 #------------------------------------------------------	
 	# Make character slide nicely through the world
 	var slide_attempts = 1
@@ -191,7 +189,8 @@ func _fixed_process(delta):
 		bullet.set_pos(get_node("shootfrom").get_global_pos())
 		bullet.set_owner(self.get_name())
 		get_node("../..").add_child(bullet)
-		
+		get_node("player_Sprite/anim").play("shoot")#----------射擊動畫
+	
 		bulletQ -= 1#------------------------------------------彈夾存入
 		pass
 	if(shooting != true):#-------------------------------------放手才可再射
@@ -206,22 +205,91 @@ func _fixed_process(delta):
 		#print(bulletT)
 		if(bulletT <= 0):reset()#------------------------------重置
 		pass
-	
+		
+		
+		
+#---------------------------------------------------------------死亡
+	if(die): die(delta)
+#------------------------------------------------------------------
+#--------------------------------------------------------------受擊
+	if(hurt_flag): hurt_flash(delta)
+#------------------------------------------------------------------
+
+
 #----------------------------------------------子彈初始
 func reset():
 	prepared = true
 	bulletQ = BULLET_QUANTITY
 	bulletT = BULLET_CHANGE_TME
+	flashT = FLASH_TIME
+	LflashT = LITTLE_FLASH_TIME
+	toggleT = TOGGLE_TIME
+	aliveT = ALIVE_TIME
+	get_owner().health[1] = 100
+	#self.set_pos()
+	
 	pass
+
 #-----------------------------------------------------
-#----------------------------------------------陷阱放置
+#--------------------------------------------------------------無敵
+func die(delta):
+	aliveT -= delta
+	#-----死亡動作
+	if(aliveT >= 0):
+		set_hidden(true)
+		pass
+	elif(aliveT >= -ALIVE_TIME): 
+		flashT -= delta
+		if(flashT >= 0):#閃爍時間
+			toggleT -= delta
+			if (toggleT <= 0 ):
+				set_hidden(visible_state)
+				visible_state = !visible_state
+				toggleT = TOGGLE_TIME
+				pass
+		pass
+	else:
+		set_hidden(false)
+		visible_state = true
+		die = false
+		reset()
+		pass
+#----------------------------------------------------------------------
+#--------------------------------------------------------------陷阱放置
 func add_trap(trap_kind):
 	bag_trap.append(trap_kind)
 	pass
-#------------------------------------------------------	
+#---------------------------------------------------------------------
 #--------------------------------------------------------------受擊
-func hurt(var name): 
-	get_owner().health[0] -= get_owner().bullet_ht
+func hurt(var name):
+	if(!hurt_flag): 
+		if(!die):
+			get_owner().health[1] -= get_owner().bullet_ht
+			hurt_flag = true
+	#		
+			pass
+		if(get_owner().health[1] <= 0): die = true
 	pass
-#------------------------------------------------------------------
+func hurt_flash(delta):
+	LflashT -= delta
+	if(LflashT >= 0):#閃爍時間
+		toggleT -= delta
+		if (toggleT <= 0 ):
+			set_hidden(visible_state)
+			visible_state = !visible_state
+			toggleT = TOGGLE_TIME
+		
+			
+			pass
+	else: 
+		set_hidden(false)
+		visible_state = true
+		hurt_flag = false
+		LflashT = LITTLE_FLASH_TIME
+		#reset()
+	
+		pass
 
+
+#---------------------------------------------------------------------
+#-----死亡動作
