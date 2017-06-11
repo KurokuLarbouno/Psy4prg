@@ -19,7 +19,12 @@ tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/imported = false
-tracks/0/keys = { "times":FloatArray( 0, 0.1, 0.2, 0.3, 0.4 ), "transitions":FloatArray( 1, 1, 1, 1, 1 ), "update":1, "values":[ 5, 6, 7, 8, 4 ] }
+tracks/0/keys = {
+"times": FloatArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": FloatArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 5, 6, 7, 8, 4 ]
+}
 
 [sub_resource type="Animation" id=3]
 
@@ -31,7 +36,12 @@ tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/imported = false
-tracks/0/keys = { "times":FloatArray( 0, 1 ), "transitions":FloatArray( 1, 1 ), "update":1, "values":[ 4, 4 ] }
+tracks/0/keys = {
+"times": FloatArray( 0, 1 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 1,
+"values": [ 4, 4 ]
+}
 
 [sub_resource type="Animation" id=4]
 
@@ -43,7 +53,12 @@ tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/imported = false
-tracks/0/keys = { "times":FloatArray( 0, 0.1, 0.2, 0.3 ), "transitions":FloatArray( 1, 1, 1, 1 ), "update":1, "values":[ 0, 1, 2, 3 ] }
+tracks/0/keys = {
+"times": FloatArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": FloatArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
 
 [sub_resource type="Animation" id=5]
 
@@ -54,22 +69,42 @@ tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/imported = false
-tracks/0/keys = { "times":FloatArray( 0, 0.1, 0.2, 0.3 ), "transitions":FloatArray( 1, 1, 1, 1 ), "update":1, "values":[ 0, 1, 2, 3 ] }
+tracks/0/keys = {
+"times": FloatArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": FloatArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
 tracks/1/type = "value"
 tracks/1/path = NodePath(".:offset")
 tracks/1/interp = 1
 tracks/1/imported = false
-tracks/1/keys = { "times":FloatArray( 0 ), "transitions":FloatArray( 1 ), "update":0, "values":[ Vector2( 0, 0 ) ] }
+tracks/1/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
 tracks/2/type = "value"
 tracks/2/path = NodePath(".:flip_h")
 tracks/2/interp = 1
 tracks/2/imported = false
-tracks/2/keys = { "times":FloatArray( 0 ), "transitions":FloatArray( 1 ), "update":1, "values":[ false ] }
+tracks/2/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 tracks/3/type = "value"
 tracks/3/path = NodePath("../shootfrom:transform/pos")
 tracks/3/interp = 1
 tracks/3/imported = false
-tracks/3/keys = { "times":FloatArray( 0 ), "transitions":FloatArray( 1 ), "update":0, "values":[ Vector2( -31, 12 ) ] }
+tracks/3/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( -31, 12 ) ]
+}
 
 [sub_resource type="Animation" id=6]
 
@@ -80,24 +115,46 @@ tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/imported = false
-tracks/0/keys = { "times":FloatArray( 0, 0.1, 0.2, 0.3 ), "transitions":FloatArray( 1, 1, 1, 1 ), "update":1, "values":[ 0, 1, 2, 3 ] }
+tracks/0/keys = {
+"times": FloatArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": FloatArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
 tracks/1/type = "value"
 tracks/1/path = NodePath(".:offset")
 tracks/1/interp = 1
 tracks/1/imported = false
-tracks/1/keys = { "times":FloatArray( 0 ), "transitions":FloatArray( 1 ), "update":0, "values":[ Vector2( 20, 0 ) ] }
+tracks/1/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( 20, 0 ) ]
+}
 tracks/2/type = "value"
 tracks/2/path = NodePath(".:flip_h")
 tracks/2/interp = 1
 tracks/2/imported = false
-tracks/2/keys = { "times":FloatArray( 0 ), "transitions":FloatArray( 1 ), "update":1, "values":[ true ] }
+tracks/2/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 tracks/3/type = "value"
 tracks/3/path = NodePath("../shootfrom:transform/pos")
 tracks/3/interp = 1
 tracks/3/imported = false
-tracks/3/keys = { "times":FloatArray( 0 ), "transitions":FloatArray( 1 ), "update":0, "values":[ Vector2( 37, 12 ) ] }
+tracks/3/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( 37, 12 ) ]
+}
 
-[node name="player" type="KinematicBody2D" groups=[ "player_group" ]]
+[node name="player" type="KinematicBody2D" groups=[
+"player_group",
+]]
 
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
@@ -107,19 +164,23 @@ collision/layers = 2
 collision/mask = 1
 collision/margin = 0.08
 script/script = ExtResource( 1 )
-BULLET_QUANTITY = 4
+BULLET_QUANTITY = 10
 BULLET_CHANGE_TME = 1
 MOTION_SPEED = 140
 health = 100
 
-[node name="Sprite" type="Sprite" parent="." groups=[ "sprite" ]]
+[node name="Sprite" type="Sprite" parent="." groups=[
+"sprite",
+]]
 
 visibility/opacity = 0.4
 transform/pos = Vector2( -6, -20 )
 texture = ExtResource( 2 )
 modulate = Color( 0, 0, 0, 1 )
 
-[node name="player_Sprite" type="Sprite" parent="." groups=[ "sprite" ]]
+[node name="player_Sprite" type="Sprite" parent="." groups=[
+"sprite",
+]]
 
 transform/pos = Vector2( -7.23082, 10.8487 )
 texture = ExtResource( 3 )
@@ -128,7 +189,9 @@ flip_h = true
 hframes = 9
 frame = 3
 region_rect = Rect2( 0, 0, 32, 64 )
-__meta__ = { "_edit_lock_":true }
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="anim" type="AnimationPlayer" parent="player_Sprite"]
 
@@ -140,7 +203,6 @@ anims/stop = SubResource( 3 )
 anims/walk = SubResource( 4 )
 anims/walk_left = SubResource( 5 )
 anims/walk_right = SubResource( 6 )
-next/walk = ""
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
@@ -162,12 +224,16 @@ enabled = false
 cast_to = Vector2( 0, 50 )
 layer_mask = 1
 type_mask = 15
-__meta__ = { "_edit_lock_":true }
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="shootfrom" type="Position2D" parent="."]
 
 transform/pos = Vector2( 37, 12 )
-__meta__ = { "_edit_lock_":true }
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="player_area" type="Area2D" parent="."]
 
@@ -176,7 +242,9 @@ gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
-__meta__ = { "_edit_lock_":true }
+__meta__ = {
+"_edit_lock_": true
+}
 
 [connection signal="body_enter" from="player_area" to="." method="_on_player_area_body_enter"]
 

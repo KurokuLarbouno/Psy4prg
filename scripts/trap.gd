@@ -1,8 +1,5 @@
 extends Area2D
 
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
 var t#timer
 var body_save # save enter body data
 var owner#放置者
@@ -17,7 +14,8 @@ var random_num #隨機變數
 var red_time#變紅時間
 var slow_time#變慢時間
 var random_num_flag = false#隨機變數flag
-var image = load("res://image/banana.png")
+var image = load("res://image/banana.png")#香蕉(trap1)圖
+var image2 = load("res://image/banana.png")#圖
 func _ready():
 	if self.get_name() == "trap1":
 		self.get_child(0).set_texture(image)
@@ -34,7 +32,7 @@ func _fixed_process(delta):
 	t +=delta
 	red_time +=1
 	slow_time += delta
-	
+#-----------------------------------------陷阱效果reset
 	if(red_time <= 20):
 	#trap effect reset
 		body_save.player_sprite.set_modulate(Color(255/(12.75*red_time),1.0,1.0))#trap effect
@@ -42,6 +40,7 @@ func _fixed_process(delta):
 	if slow_time >= 3 and slow_time < 4:#變慢復原
 		body_save.MOTION_SPEED = 140
 	#trap effect reset END
+#-----------------------------------------陷阱效果reset END
 	if(t >= 5 && t<6):#陷阱重新生成
 		
 		
@@ -96,15 +95,20 @@ func _on_trap_area_body_enter( body ):
 							body_save = body
 							trap_switch = !trap_switch
 							trap_start = false
-						#trap effect
+#-----------------------------------------trap effect 陷阱效果發生區
 							body.player_sprite.set_modulate(Color(255.0,1.0,1.0))
 							if self.get_name() == "trap":
 								slow_time = 0
 								body.MOTION_SPEED = 70
-								get_parent().get_parent().health[0] -= 5
+#-------------------------------陷阱的扣血(嘔吐物？)								
+								if body.get_name() == "player":
+									get_parent().get_parent().health[0] -= 5
+								if body.get_name() == "player_null":
+									get_parent().get_parent().health[1] -= 5
+#-------------------------------陷阱的扣血(嘔吐物？) END
 							if self.get_name() == "trap1":
 								body.banana_trap_effect_flag = true
-						#trap effect END
+#-----------------------------------------trap effect END
 							self.set_pos(get_node("../trash").get_global_pos())
 							t=0
 							red_time = 0
@@ -114,8 +118,11 @@ func _on_trap_area_body_enter( body ):
 
 func _on_trap_body_exit( body ):
 	if !player_putdown_trap_flag:
-		if body == owner && count:
-			trap_start = true
+#----------------------------------------此段控制是否是否玩家一觸即發trap
+		trap_start = true#
+		#if body == owner && count:
+		#	trap_start = true
+#----------------------------------------
 		if !trap_restart:
 		
 			count += 1
