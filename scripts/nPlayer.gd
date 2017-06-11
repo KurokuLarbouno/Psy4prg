@@ -192,7 +192,6 @@ func _fixed_process(delta):
 		pass
 	if(bulletQ == -1):#裝彈倒數
 		bulletT -= delta
-		print(bulletT)
 		if(bulletT <= 0):reload()#換彈
 		pass
 #---------------------------------------------------------------死亡
@@ -259,7 +258,6 @@ func hurt(var name):
 		if(!die):
 			health = health - bullet_dmg
 			get_owner().health[1] = health
-			print(get_owner().health[1])
 			hurt_flag = true
 			pass
 		if(get_owner().health[1] <= 0): die = true
