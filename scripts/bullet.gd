@@ -34,7 +34,7 @@ func _on_bullet_body_enter( body ):
 		if(body.get_groups()[i]=="player_group"):
 			if(body.get_name() != owner_name):
 				t=1000#結束子彈
-				body.hurt(self.get_name())
+				body.hurt(get_node("../floor/"+owner_name).bullet_dmg)
 	pass
 	
 func set_owner(var owname):

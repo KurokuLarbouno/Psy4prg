@@ -4,7 +4,8 @@ extends KinematicBody2D
 #	MOTION_SPEED
 #	BULLET_CHANGE_TME
 #-----------------------------------
-var plyer_health = 100
+var player_health
+var HEALTH = 200
 #---------------------------子彈部分
 export var BULLET_QUANTITY = 10
 var bulletQ		#子彈數紀錄
@@ -12,7 +13,7 @@ export var BULLET_CHANGE_TME = 1
 var bulletT		#換彈時間紀錄
 var prepared
 var bullet_speed = 60
-var bullet_dmg = 20
+var bullet_dmg = 30
 #----------------------------------
 #---------------------------陷阱部分
 var bag_trap = []
@@ -228,7 +229,7 @@ func reset():
 	LflashT = LITTLE_FLASH_TIME
 	toggleT = TOGGLE_TIME
 	aliveT = ALIVE_TIME
-	get_owner().health[1] = 100
+	player_health = HEALTH
 	#self.set_pos()
 	
 	pass
@@ -236,6 +237,7 @@ func reset():
 #-----------------------------------------------------
 #--------------------------------------------------------------無敵
 func die(delta):
+	
 	aliveT -= delta
 	#-----死亡動作
 	if(aliveT >= 0):
@@ -264,14 +266,16 @@ func add_trap(trap_kind):
 	pass
 #---------------------------------------------------------------------
 #--------------------------------------------------------------受擊
-func hurt(var name):
+func hurt(var dmg):
 	if(!hurt_flag): 
 		if(!die):
-			health -= bullet_dmg
-			get_owner().health[0] = health
+			player_health = player_health-dmg
+			print(player_health)
 			hurt_flag = true
 			pass
-		if(get_owner().health[0] <= 0): die = true
+		if(player_health <= 0):
+			player_health = 0
+			die = true
 	pass
 func hurt_flash(delta):
 	LflashT -= delta
