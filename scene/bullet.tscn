@@ -10,7 +10,17 @@ radius = 6.9361
 
 [sub_resource type="GDScript" id=2]
 
-script/source = "extends KinematicBody2D\n\n# class member variables go here, for example:\n# var a = 2\n# var b = \"textvar\"\n\nfunc _ready():\n\t# Called every time the node is added to the scene.\n\t# Initialization here\n\tpass\n"
+script/source = "extends KinematicBody2D
+
+# class member variables go here, for example:
+# var a = 2
+# var b = \"textvar\"
+
+func _ready():
+	# Called every time the node is added to the scene.
+	# Initialization here
+	pass
+"
 
 [node name="bullet" type="Area2D"]
 
@@ -23,7 +33,6 @@ gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
 script/script = ExtResource( 1 )
-sp = 50
 
 [node name="shape" type="CollisionShape2D" parent="."]
 
@@ -40,10 +49,11 @@ collision/mask = 1
 collision/margin = 0.08
 script/script = SubResource( 2 )
 
-[node name="Sprite" type="Sprite" parent="body" groups=[ "sprite" ]]
+[node name="Sprite" type="Sprite" parent="body" groups=[
+"sprite",
+]]
 
 texture = ExtResource( 2 )
-modulate = Color( 0.627231, 0.964844, 0.48996, 1 )
 
 [connection signal="body_enter" from="." to="." method="_on_bullet_body_enter"]
 

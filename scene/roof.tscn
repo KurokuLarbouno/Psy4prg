@@ -1,0 +1,1504 @@
+[gd_scene load_steps=59 format=1]
+
+[ext_resource path="res://image/場景拆圖/roof.png" type="Texture" id=1]
+[ext_resource path="res://image/場景拆圖/物件左一.png" type="Texture" id=2]
+[ext_resource path="res://image/場景拆圖/物件左二.png" type="Texture" id=3]
+[ext_resource path="res://image/場景拆圖/物件左三.png" type="Texture" id=4]
+[ext_resource path="res://image/場景拆圖/物件左四.png" type="Texture" id=5]
+[ext_resource path="res://image/場景拆圖/物件左五.png" type="Texture" id=6]
+[ext_resource path="res://image/場景拆圖/物件左六.png" type="Texture" id=7]
+[ext_resource path="res://image/場景拆圖/物件左七.png" type="Texture" id=8]
+[ext_resource path="res://image/場景拆圖/物件左八.png" type="Texture" id=9]
+[ext_resource path="res://image/場景拆圖/物件中一.png" type="Texture" id=10]
+[ext_resource path="res://image/場景拆圖/物件中二.png" type="Texture" id=11]
+[ext_resource path="res://image/場景拆圖/物件下一.png" type="Texture" id=12]
+[ext_resource path="res://image/場景拆圖/物件下二.png" type="Texture" id=13]
+[ext_resource path="res://image/場景拆圖/上中牆.png" type="Texture" id=14]
+[ext_resource path="res://image/場景拆圖/上牆.png" type="Texture" id=15]
+[ext_resource path="res://image/場景拆圖/門.png" type="Texture" id=16]
+[ext_resource path="res://image/場景拆圖/右上牆.png" type="Texture" id=17]
+[ext_resource path="res://image/場景拆圖/右下牆.png" type="Texture" id=18]
+[ext_resource path="res://image/場景拆圖/右下柱子.png" type="Texture" id=19]
+[ext_resource path="res://image/場景拆圖/中頂.png" type="Texture" id=20]
+[ext_resource path="res://image/場景拆圖/中上牆.png" type="Texture" id=21]
+[ext_resource path="res://image/場景拆圖/中牆.png" type="Texture" id=22]
+[ext_resource path="res://image/場景拆圖/冷氣上.png" type="Texture" id=23]
+[ext_resource path="res://image/場景拆圖/冷氣中.png" type="Texture" id=24]
+[ext_resource path="res://image/場景拆圖/冷氣下.png" type="Texture" id=25]
+[ext_resource path="res://image/場景拆圖/左上建築.png" type="Texture" id=26]
+[ext_resource path="res://image/場景拆圖/左上牆.png" type="Texture" id=27]
+[ext_resource path="res://image/場景拆圖/左下牆.png" type="Texture" id=28]
+[ext_resource path="res://image/場景拆圖/中下牆.png" type="Texture" id=29]
+[ext_resource path="res://image/場景拆圖/下牆.png" type="Texture" id=30]
+[ext_resource path="res://image/場景拆圖/下中牆.png" type="Texture" id=31]
+[ext_resource path="res://image/場景拆圖/roof_light.png" type="Texture" id=32]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 12, 7 )
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 12.3829, 8.10675 )
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 4.36383 )
+
+[sub_resource type="RectangleShape2D" id=4]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 1.7041 )
+
+[sub_resource type="RectangleShape2D" id=5]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 2.13562 )
+
+[sub_resource type="RectangleShape2D" id=6]
+
+custom_solver_bias = 0.0
+extents = Vector2( 12.4287, 11.8128 )
+
+[sub_resource type="RectangleShape2D" id=7]
+
+custom_solver_bias = 0.0
+extents = Vector2( 12.3284, 8.05078 )
+
+[sub_resource type="RectangleShape2D" id=8]
+
+custom_solver_bias = 0.0
+extents = Vector2( 12.4976, 11.5727 )
+
+[sub_resource type="RectangleShape2D" id=9]
+
+custom_solver_bias = 0.0
+extents = Vector2( 12.2005, 8.24785 )
+
+[sub_resource type="RectangleShape2D" id=10]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 2.44119 )
+
+[sub_resource type="RectangleShape2D" id=11]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 16.3159 )
+
+[sub_resource type="RectangleShape2D" id=12]
+
+custom_solver_bias = 0.0
+extents = Vector2( 3.15152, 5.70397 )
+
+[sub_resource type="RectangleShape2D" id=13]
+
+custom_solver_bias = 0.0
+extents = Vector2( 9.13334, 7.11551 )
+
+[sub_resource type="RectangleShape2D" id=14]
+
+custom_solver_bias = 0.0
+extents = Vector2( 11.121, 8.9132 )
+
+[sub_resource type="RectangleShape2D" id=15]
+
+custom_solver_bias = 0.0
+extents = Vector2( 0.348324, 42.2811 )
+
+[sub_resource type="RectangleShape2D" id=16]
+
+custom_solver_bias = 0.0
+extents = Vector2( 9.88634, 10.0827 )
+
+[sub_resource type="RectangleShape2D" id=17]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 8.7134 )
+
+[sub_resource type="RectangleShape2D" id=18]
+
+custom_solver_bias = 0.0
+extents = Vector2( 11.8127, 16.0426 )
+
+[sub_resource type="RectangleShape2D" id=19]
+
+custom_solver_bias = 0.0
+extents = Vector2( 3.57548, 10 )
+
+[sub_resource type="RectangleShape2D" id=20]
+
+custom_solver_bias = 0.0
+extents = Vector2( 38.5535, 93.2961 )
+
+[sub_resource type="RectangleShape2D" id=21]
+
+custom_solver_bias = 0.0
+extents = Vector2( 2.79698, 6.55198 )
+
+[sub_resource type="RectangleShape2D" id=22]
+
+custom_solver_bias = 0.0
+extents = Vector2( 2.82776, 5.98806 )
+
+[sub_resource type="RectangleShape2D" id=23]
+
+custom_solver_bias = 0.0
+extents = Vector2( 2.74114, 10 )
+
+[sub_resource type="RectangleShape2D" id=24]
+
+custom_solver_bias = 0.0
+extents = Vector2( 81.5824, 13.6082 )
+
+[sub_resource type="RectangleShape2D" id=25]
+
+custom_solver_bias = 0.0
+extents = Vector2( 31, 928 )
+
+[sub_resource type="RectangleShape2D" id=26]
+
+custom_solver_bias = 0.0
+extents = Vector2( 2.83489, 10 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="floor" type="Sprite" parent="."]
+
+z/z = -1005
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="物件" type="Node2D" parent="."]
+
+editor/display_folded = true
+
+[node name="左一" type="StaticBody2D" parent="物件" groups=[
+"wall",
+]]
+
+editor/display_folded = true
+transform/pos = Vector2( -686, -640 )
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 6 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="物件/左一" groups=[
+"sprite",
+]]
+
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="物件/左一"]
+
+transform/pos = Vector2( 0, 6 )
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[node name="左二" type="StaticBody2D" parent="物件" groups=[
+"wall",
+]]
+
+editor/display_folded = true
+transform/pos = Vector2( -66.3207, -628.491 )
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 9.855, 6.8891 )
+shapes/0/trigger = false
+shapes/1/shape = SubResource( 3 )
+shapes/1/transform = Matrix32( 1, 0, 0, 0.792074, 15.9622, 17.3244 )
+shapes/1/trigger = false
+shapes/2/shape = SubResource( 4 )
+shapes/2/transform = Matrix32( 1, 0, 0, 1, -16.194, -2.63684 )
+shapes/2/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="物件/左二" groups=[
+"sprite",
+]]
+
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="物件/左二"]
+
+transform/pos = Vector2( 9.855, 6.8891 )
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
+
+[node name="CollisionShape2D1" type="CollisionShape2D" parent="物件/左二"]
+
+transform/pos = Vector2( 15.9622, 17.3244 )
+transform/scale = Vector2( 1, 0.792074 )
+shape = SubResource( 3 )
+trigger = false
+_update_shape_index = 1
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="物件/左二"]
+
+transform/pos = Vector2( -16.194, -2.63684 )
+shape = SubResource( 4 )
+trigger = false
+_update_shape_index = 2
+
+[node name="左三" type="StaticBody2D" parent="物件" groups=[
+"wall",
+]]
+
+editor/display_folded = true
+transform/pos = Vector2( 44.3995, -642.687 )
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, -0.104683, 4.815 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="物件/左三" groups=[
+"sprite",
+]]
+
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="物件/左三"]
+
+transform/pos = Vector2( -0.104683, 4.815 )
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
+
+[node name="左四" type="StaticBody2D" parent="物件" groups=[
+"wall",
+]]
+
+editor/display_folded = true
+transform/pos = Vector2( 186.602, -642.687 )
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 12.3908, 4.90784 )
+shapes/0/trigger = false
+shapes/1/shape = SubResource( 5 )
+shapes/1/transform = Matrix32( 1, 0, 0, 1, -14.5895, 0.963318 )
+shapes/1/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="物件/左四" groups=[
+"sprite",
+]]
+
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="物件/左四"]
+
+transform/pos = Vector2( 12.3908, 4.90784 )
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
+
+[node name="CollisionShape2D1" type="CollisionShape2D" parent="物件/左四"]
+
+transform/pos = Vector2( -14.5895, 0.963318 )
+shape = SubResource( 5 )
+trigger = false
+_update_shape_index = 1
+
+[node name="左五" type="StaticBody2D" parent="物件" groups=[
+"wall",
+]]
+
+editor/display_folded = true
+transform/pos = Vector2( 246.721, -555.231 )
+input/pickable = false
+shapes/0/shape = SubResource( 5 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0.483589, 1.59137 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="物件/左五" groups=[
+"sprite",
+]]
+
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D1" type="CollisionShape2D" parent="物件/左五"]
+
+transform/pos = Vector2( 0.483589, 1.59137 )
+shape = SubResource( 5 )
+trigger = false
+_update_shape_index = 0
+
+[node name="左六" type="StaticBody2D" parent="物件" groups=[
+"wall",
+]]
+
+editor/display_folded = true
+transform/pos = Vector2( 449.784, -561.58 )
+input/pickable = false
+shapes/0/shape = SubResource( 5 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 15.723, 11.894 )
+shapes/0/trigger = false
+shapes/1/shape = SubResource( 6 )
+shapes/1/transform = Matrix32( 1, 0, 0, 1, -12.1801, 10.3915 )
+shapes/1/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="物件/左六" groups=[
+"sprite",
+]]
+
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D1" type="CollisionShape2D" parent="物件/左六"]
+
+transform/pos = Vector2( 15.723, 11.894 )
+shape = SubResource( 5 )
+trigger = false
+_update_shape_index = 0
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="物件/左六"]
+
+transform/pos = Vector2( -12.1801, 10.3915 )
+shape = SubResource( 6 )
+trigger = false
+_update_shape_index = 1
+
+[node name="左七" type="StaticBody2D" parent="物件" groups=[
+"wall",
+]]
+
+editor/display_folded = true
+transform/pos = Vector2( 511.352, -635.589 )
+input/pickable = false
+shapes/0/shape = SubResource( 5 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 23.9398, -12.2319 )
+shapes/0/trigger = false
+shapes/1/shape = SubResource( 5 )
+shapes/1/transform = Matrix32( 1, 0, 0, 1, -25.0113, 15.0408 )
+shapes/1/trigger = false
+shapes/2/shape = SubResource( 6 )
+shapes/2/transform = Matrix32( 1, 0, 0, 1, 1.45628, 6.19574 )
+shapes/2/trigger = false
+shapes/3/shape = SubResource( 6 )
+shapes/3/transform = Matrix32( 1, 0, 0, 1, -20.0472, -4.46857 )
+shapes/3/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="物件/左七" groups=[
+"sprite",
+]]
+
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D1" type="CollisionShape2D" parent="物件/左七"]
+
+transform/pos = Vector2( 23.9398, -12.2319 )
+shape = SubResource( 5 )
+trigger = false
+_update_shape_index = 0
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="物件/左七"]
+
+transform/pos = Vector2( -25.0113, 15.0408 )
+shape = SubResource( 5 )
+trigger = false
+_update_shape_index = 1
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="物件/左七"]
+
+transform/pos = Vector2( 1.45628, 6.19574 )
+shape = SubResource( 6 )
+trigger = false
+_update_shape_index = 2
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="物件/左七"]
+
+transform/pos = Vector2( -20.0472, -4.46857 )
+shape = SubResource( 6 )
+trigger = false
+_update_shape_index = 3
+
+[node name="左八" type="StaticBody2D" parent="物件" groups=[
+"wall",
+]]
+
+editor/display_folded = true
+transform/pos = Vector2( 692.598, -638.095 )
+input/pickable = false
+shapes/0/shape = SubResource( 5 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 5.38926, 22.491 )
+shapes/0/trigger = false
+shapes/1/shape = SubResource( 7 )
+shapes/1/transform = Matrix32( 1, 0, 0, 1, 15.1816, 5.28992 )
+shapes/1/trigger = false
+shapes/2/shape = SubResource( 8 )
+shapes/2/transform = Matrix32( 1, 0, 0, 1, -1.63552, -8.31177 )
+shapes/2/trigger = false
+shapes/3/shape = SubResource( 6 )
+shapes/3/transform = Matrix32( 1, 0, 0, 1, -13.8636, 6.2337 )
+shapes/3/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="物件/左八" groups=[
+"sprite",
+]]
+
+texture = ExtResource( 9 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D1" type="CollisionShape2D" parent="物件/左八"]
+
+transform/pos = Vector2( 5.38926, 22.491 )
+shape = SubResource( 5 )
+trigger = false
+_update_shape_index = 0
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="物件/左八"]
+
+transform/pos = Vector2( 15.1816, 5.28992 )
+shape = SubResource( 7 )
+trigger = false
+_update_shape_index = 1
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="物件/左八"]
+
+transform/pos = Vector2( -1.63552, -8.31177 )
+shape = SubResource( 8 )
+trigger = false
+_update_shape_index = 2
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="物件/左八"]
+
+transform/pos = Vector2( -13.8636, 6.2337 )
+shape = SubResource( 6 )
+trigger = false
+_update_shape_index = 3
+
+[node name="中一" type="StaticBody2D" parent="物件" groups=[
+"wall",
+]]
+
+editor/display_folded = true
+transform/pos = Vector2( 699.003, -138.123 )
+input/pickable = false
+shapes/0/shape = SubResource( 9 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, -8.15582, -3.2794 )
+shapes/0/trigger = false
+shapes/1/shape = SubResource( 9 )
+shapes/1/transform = Matrix32( 1, 0, 0, 1, 8.01643, 12.1794 )
+shapes/1/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="物件/中一" groups=[
+"sprite",
+]]
+
+texture = ExtResource( 10 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="物件/中一"]
+
+transform/pos = Vector2( -8.15582, -3.2794 )
+shape = SubResource( 9 )
+trigger = false
+_update_shape_index = 0
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="物件/中一"]
+
+transform/pos = Vector2( 8.01643, 12.1794 )
+shape = SubResource( 9 )
+trigger = false
+_update_shape_index = 1
+
+[node name="中二" type="StaticBody2D" parent="物件" groups=[
+"wall",
+]]
+
+editor/display_folded = true
+transform/pos = Vector2( 703.32, 134.502 )
+input/pickable = false
+shapes/0/shape = SubResource( 6 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, -0.0512009, 1.39224 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="物件/中二" groups=[
+"sprite",
+]]
+
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="物件/中二"]
+
+transform/pos = Vector2( -0.0512009, 1.39224 )
+shape = SubResource( 6 )
+trigger = false
+_update_shape_index = 0
+
+[node name="下一" type="StaticBody2D" parent="物件" groups=[
+"wall",
+]]
+
+editor/display_folded = true
+transform/pos = Vector2( -63.634, 278.966 )
+input/pickable = false
+shapes/0/shape = SubResource( 6 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 7.25571, 14.9622 )
+shapes/0/trigger = false
+shapes/1/shape = SubResource( 6 )
+shapes/1/transform = Matrix32( 1, 0, 0, 1, -15.8248, -4.87082 )
+shapes/1/trigger = false
+shapes/2/shape = SubResource( 6 )
+shapes/2/transform = Matrix32( 1, 0, 0, 1, 16.8823, 3.82788 )
+shapes/2/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="物件/下一" groups=[
+"sprite",
+]]
+
+texture = ExtResource( 12 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="物件/下一"]
+
+transform/pos = Vector2( 7.25571, 14.9622 )
+shape = SubResource( 6 )
+trigger = false
+_update_shape_index = 0
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="物件/下一"]
+
+transform/pos = Vector2( -15.8248, -4.87082 )
+shape = SubResource( 6 )
+trigger = false
+_update_shape_index = 1
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="物件/下一"]
+
+transform/pos = Vector2( 16.8823, 3.82788 )
+shape = SubResource( 6 )
+trigger = false
+_update_shape_index = 2
+
+[node name="下二" type="StaticBody2D" parent="物件" groups=[
+"wall",
+]]
+
+editor/display_folded = true
+transform/pos = Vector2( 75.0612, 280.426 )
+input/pickable = false
+shapes/0/shape = SubResource( 6 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, -4.10444, 6.44211 )
+shapes/0/trigger = false
+shapes/1/shape = SubResource( 6 )
+shapes/1/transform = Matrix32( 1, 0, 0, 1, -24.6605, -5.34418 )
+shapes/1/trigger = false
+shapes/2/shape = SubResource( 10 )
+shapes/2/transform = Matrix32( 1, 0, 0, 1, 27.6115, 4.26007 )
+shapes/2/trigger = false
+shapes/3/shape = SubResource( 10 )
+shapes/3/transform = Matrix32( 1, 0, 0, 1, -22.0892, 26.0337 )
+shapes/3/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="物件/下二" groups=[
+"sprite",
+]]
+
+texture = ExtResource( 13 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="物件/下二"]
+
+transform/pos = Vector2( -4.10444, 6.44211 )
+shape = SubResource( 6 )
+trigger = false
+_update_shape_index = 0
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="物件/下二"]
+
+transform/pos = Vector2( -24.6605, -5.34418 )
+shape = SubResource( 6 )
+trigger = false
+_update_shape_index = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="物件/下二"]
+
+transform/pos = Vector2( 27.6115, 4.26007 )
+shape = SubResource( 10 )
+trigger = false
+_update_shape_index = 2
+
+[node name="CollisionShape2D1" type="CollisionShape2D" parent="物件/下二"]
+
+transform/pos = Vector2( -22.0892, 26.0337 )
+shape = SubResource( 10 )
+trigger = false
+_update_shape_index = 3
+
+[node name="牆" type="Node2D" parent="."]
+
+editor/display_folded = true
+
+[node name="上中牆" type="StaticBody2D" parent="牆" groups=[
+"wall",
+]]
+
+editor/display_folded = true
+transform/pos = Vector2( -1.78814e-06, -645 )
+input/pickable = false
+shapes/0/shape = SubResource( 11 )
+shapes/0/transform = Matrix32( 2.99519, 0, 0, 3.32493, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="牆/上中牆" groups=[
+"sprite",
+]]
+
+texture = ExtResource( 14 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="牆/上中牆"]
+
+transform/scale = Vector2( 2.99519, 3.32493 )
+shape = SubResource( 11 )
+trigger = false
+_update_shape_index = 0
+
+[node name="上牆" type="StaticBody2D" parent="牆" groups=[
+"wall",
+]]
+
+transform/pos = Vector2( -20, -702 )
+input/pickable = false
+shapes/0/shape = SubResource( 11 )
+shapes/0/transform = Matrix32( 83.3077, 0, 0, 2.82151, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="牆/上牆" groups=[
+"sprite",
+]]
+
+texture = ExtResource( 15 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="牆/上牆"]
+
+transform/scale = Vector2( 83.3077, 2.82151 )
+shape = SubResource( 11 )
+trigger = false
+_update_shape_index = 0
+
+[node name="門" type="StaticBody2D" parent="牆" groups=[
+"wall",
+]]
+
+editor/display_folded = true
+transform/pos = Vector2( 347.023, -669.512 )
+input/pickable = false
+shapes/0/shape = SubResource( 11 )
+shapes/0/transform = Matrix32( 12.6923, 0, 0, 6.75609, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="牆/門" groups=[
+"sprite",
+]]
+
+texture = ExtResource( 16 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="牆/門"]
+
+transform/scale = Vector2( 12.6923, 6.75609 )
+shape = SubResource( 11 )
+trigger = false
+_update_shape_index = 0
+
+[node name="右上牆" type="StaticBody2D" parent="牆" groups=[
+"wall",
+]]
+
+editor/display_folded = true
+transform/pos = Vector2( 684, -212 )
+input/pickable = false
+shapes/0/shape = SubResource( 12 )
+shapes/0/transform = Matrix32( 12.6923, 0, 0, 6.75609, 1.07685, 22.8048 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="牆/右上牆" groups=[
+"sprite",
+]]
+
+texture = ExtResource( 17 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="牆/右上牆"]
+
+transform/pos = Vector2( 1.07685, 22.8048 )
+transform/scale = Vector2( 12.6923, 6.75609 )
+shape = SubResource( 12 )
+trigger = false
+_update_shape_index = 0
+
+[node name="右下牆" type="StaticBody2D" parent="牆" groups=[
+"wall",
+]]
+
+editor/display_folded = true
+transform/pos = Vector2( 684, 72 )
+input/pickable = false
+shapes/0/shape = SubResource( 12 )
+shapes/0/transform = Matrix32( 12.6923, 0, 0, 6.75609, 1.07685, 22.8048 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="牆/右下牆" groups=[
+"sprite",
+]]
+
+texture = ExtResource( 18 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="牆/右下牆"]
+
+transform/pos = Vector2( 1.07685, 22.8048 )
+transform/scale = Vector2( 12.6923, 6.75609 )
+shape = SubResource( 12 )
+trigger = false
+_update_shape_index = 0
+
+[node name="右下柱子" type="StaticBody2D" parent="牆" groups=[
+"wall",
+]]
+
+editor/display_folded = true
+transform/pos = Vector2( 453, 417 )
+input/pickable = false
+shapes/0/shape = SubResource( 13 )
+shapes/0/transform = Matrix32( 12.6923, 0, 0, 6.75609, 2.43783e-05, 15.3413 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="牆/右下柱子" groups=[
+"sprite",
+]]
+
+texture = ExtResource( 19 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="牆/右下柱子"]
+
+transform/pos = Vector2( 2.43783e-05, 15.3413 )
+transform/scale = Vector2( 12.6923, 6.75609 )
+shape = SubResource( 13 )
+trigger = false
+_update_shape_index = 0
+
+[node name="中頂" type="StaticBody2D" parent="牆" groups=[
+"wall",
+]]
+
+editor/display_folded = true
+transform/pos = Vector2( 106, -82 )
+input/pickable = false
+shapes/0/shape = SubResource( 14 )
+shapes/0/transform = Matrix32( 31.1932, 0, 0, 29.2769, -1.10809, 31.3219 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="牆/中頂" groups=[
+"sprite",
+]]
+
+texture = ExtResource( 20 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="牆/中頂"]
+
+transform/pos = Vector2( -1.10809, 31.3219 )
+transform/scale = Vector2( 31.1932, 29.2769 )
+shape = SubResource( 14 )
+trigger = false
+_update_shape_index = 0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="中上牆" type="StaticBody2D" parent="牆" groups=[
+"wall",
+]]
+
+editor/display_folded = true
+transform/pos = Vector2( 0, -465.499 )
+input/pickable = false
+shapes/0/shape = SubResource( 15 )
+shapes/0/transform = Matrix32( 83.9778, 0, 0, 2.82151, -0.663445, 68.3324 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="牆/中上牆" groups=[
+"sprite",
+]]
+
+texture = ExtResource( 21 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="牆/中上牆"]
+
+transform/pos = Vector2( -0.663445, 68.3324 )
+transform/scale = Vector2( 83.9778, 2.82151 )
+shape = SubResource( 15 )
+trigger = false
+_update_shape_index = 0
+
+[node name="中牆" type="StaticBody2D" parent="牆" groups=[
+"wall",
+]]
+
+editor/display_folded = true
+transform/pos = Vector2( 105.504, 242 )
+input/pickable = false
+shapes/0/shape = SubResource( 16 )
+shapes/0/transform = Matrix32( 35.0476, 0, 0, 3.28497, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="牆/中牆" groups=[
+"sprite",
+]]
+
+texture = ExtResource( 22 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="牆/中牆"]
+
+visibility/visible = false
+transform/scale = Vector2( 35.0476, 3.28497 )
+shape = SubResource( 16 )
+trigger = false
+_update_shape_index = 0
+
+[node name="冷氣上" type="StaticBody2D" parent="牆" groups=[
+"wall",
+]]
+
+editor/display_folded = true
+transform/pos = Vector2( -462.496, 4.00384 )
+input/pickable = false
+shapes/0/shape = SubResource( 17 )
+shapes/0/transform = Matrix32( 10.667, 0, 0, 6.57696, 0, 9.38248 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="牆/冷氣上" groups=[
+"sprite",
+]]
+
+transform/pos = Vector2( 0.496002, -0.00383997 )
+texture = ExtResource( 23 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="牆/冷氣上"]
+
+transform/pos = Vector2( 0, 9.38248 )
+transform/scale = Vector2( 10.667, 6.57696 )
+shape = SubResource( 17 )
+trigger = false
+_update_shape_index = 0
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="冷氣中" type="StaticBody2D" parent="牆" groups=[
+"wall",
+]]
+
+editor/display_folded = true
+transform/pos = Vector2( -462.496, 161.973 )
+input/pickable = false
+shapes/0/shape = SubResource( 17 )
+shapes/0/transform = Matrix32( 10.667, 0, 0, 6.57696, 0.814519, 9.77407 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="牆/冷氣中" groups=[
+"sprite",
+]]
+
+transform/pos = Vector2( 0.496002, 0.0269928 )
+texture = ExtResource( 24 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="牆/冷氣中"]
+
+transform/pos = Vector2( 0.814519, 9.77407 )
+transform/scale = Vector2( 10.667, 6.57696 )
+shape = SubResource( 17 )
+trigger = false
+_update_shape_index = 0
+
+[node name="冷氣下" type="StaticBody2D" parent="牆" groups=[
+"wall",
+]]
+
+editor/display_folded = true
+transform/pos = Vector2( -462.493, 319.99 )
+input/pickable = false
+shapes/0/shape = SubResource( 17 )
+shapes/0/transform = Matrix32( 10.667, 0, 0, 6.57696, 0, 9.26586 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="牆/冷氣下" groups=[
+"sprite",
+]]
+
+transform/pos = Vector2( 0.493011, 1.01001 )
+texture = ExtResource( 25 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="牆/冷氣下"]
+
+transform/pos = Vector2( 0, 9.26586 )
+transform/scale = Vector2( 10.667, 6.57696 )
+shape = SubResource( 17 )
+trigger = false
+_update_shape_index = 0
+
+[node name="左上建築" type="StaticBody2D" parent="牆" groups=[
+"wall",
+]]
+
+editor/display_folded = true
+transform/pos = Vector2( -462, -433 )
+input/pickable = false
+shapes/0/shape = SubResource( 18 )
+shapes/0/transform = Matrix32( 10.667, 0, 0, 6.57625, 1.76031, -27.3482 )
+shapes/0/trigger = false
+shapes/1/shape = SubResource( 19 )
+shapes/1/transform = Matrix32( 10.667, 0, 0, 6.57696, -48.3319, 76.1157 )
+shapes/1/trigger = false
+shapes/2/shape = SubResource( 20 )
+shapes/2/transform = Matrix32( 1, 0, 0, 1, 48.5432, 111.806 )
+shapes/2/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="牆/左上建築" groups=[
+"sprite",
+]]
+
+texture = ExtResource( 26 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="牆/左上建築"]
+
+transform/pos = Vector2( 1.76031, -27.3482 )
+transform/scale = Vector2( 10.667, 6.57625 )
+shape = SubResource( 18 )
+trigger = false
+_update_shape_index = 0
+
+[node name="CollisionShape2D 2" type="CollisionShape2D" parent="牆/左上建築"]
+
+transform/pos = Vector2( -48.3319, 76.1157 )
+transform/scale = Vector2( 10.667, 6.57696 )
+shape = SubResource( 19 )
+trigger = false
+_update_shape_index = 1
+
+[node name="CollisionShape2D 3" type="CollisionShape2D" parent="牆/左上建築"]
+
+transform/pos = Vector2( 48.5432, 111.806 )
+shape = SubResource( 20 )
+trigger = false
+_update_shape_index = 2
+
+[node name="左上牆" type="StaticBody2D" parent="牆" groups=[
+"wall",
+]]
+
+editor/display_folded = true
+transform/pos = Vector2( -674, -212 )
+input/pickable = false
+shapes/0/shape = SubResource( 21 )
+shapes/0/transform = Matrix32( 10.667, 0, 0, 6.57696, -0.239632, 18.936 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="牆/左上牆" groups=[
+"sprite",
+]]
+
+transform/pos = Vector2( -0.0098877, 0.515014 )
+texture = ExtResource( 27 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="牆/左上牆"]
+
+transform/pos = Vector2( -0.239632, 18.936 )
+transform/scale = Vector2( 10.667, 6.57696 )
+shape = SubResource( 21 )
+trigger = false
+_update_shape_index = 0
+
+[node name="左下牆" type="StaticBody2D" parent="牆" groups=[
+"wall",
+]]
+
+editor/display_folded = true
+transform/pos = Vector2( -674, 72 )
+input/pickable = false
+shapes/0/shape = SubResource( 22 )
+shapes/0/transform = Matrix32( 10.667, 0, 0, 6.57696, -0.911365, 22.936 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="牆/左下牆" groups=[
+"sprite",
+]]
+
+transform/pos = Vector2( -0.0098877, 0.515014 )
+texture = ExtResource( 28 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="牆/左下牆"]
+
+transform/pos = Vector2( -0.911365, 22.936 )
+transform/scale = Vector2( 10.667, 6.57696 )
+shape = SubResource( 22 )
+trigger = false
+_update_shape_index = 0
+
+[node name="中下牆" type="StaticBody2D" parent="牆" groups=[
+"wall",
+]]
+
+editor/display_folded = true
+transform/pos = Vector2( 4.47035e-08, 301 )
+input/pickable = false
+shapes/0/shape = SubResource( 23 )
+shapes/0/transform = Matrix32( 10.667, 0, 0, 8.01136, -0.239713, -11.1477 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="牆/中下牆" groups=[
+"sprite",
+]]
+
+transform/pos = Vector2( -0.0098877, 0.515014 )
+texture = ExtResource( 29 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="牆/中下牆"]
+
+transform/pos = Vector2( -0.239713, -11.1477 )
+transform/scale = Vector2( 10.667, 8.01136 )
+shape = SubResource( 23 )
+trigger = false
+_update_shape_index = 0
+
+[node name="下牆" type="StaticBody2D" parent="牆" groups=[
+"wall",
+]]
+
+editor/display_folded = true
+transform/pos = Vector2( 4.47035e-07, 551 )
+input/pickable = false
+shapes/0/shape = SubResource( 24 )
+shapes/0/transform = Matrix32( 10.667, 0, 0, 2.40035, -1.2397, 42.8654 )
+shapes/0/trigger = false
+shapes/1/shape = SubResource( 25 )
+shapes/1/transform = Matrix32( 1, 0, 0, 0.777658, 753, -593 )
+shapes/1/trigger = false
+shapes/2/shape = SubResource( 25 )
+shapes/2/transform = Matrix32( 1, 0, 0, 0.777658, -734, -652 )
+shapes/2/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="牆/下牆" groups=[
+"sprite",
+]]
+
+texture = ExtResource( 30 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="牆/下牆"]
+
+transform/pos = Vector2( -1.2397, 42.8654 )
+transform/scale = Vector2( 10.667, 2.40035 )
+shape = SubResource( 24 )
+trigger = false
+_update_shape_index = 0
+
+[node name="CollisionShape2D 2" type="CollisionShape2D" parent="牆/下牆"]
+
+transform/pos = Vector2( 753, -593 )
+transform/scale = Vector2( 1, 0.777658 )
+shape = SubResource( 25 )
+trigger = false
+_update_shape_index = 1
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="牆/下牆"]
+
+transform/pos = Vector2( -734, -652 )
+transform/scale = Vector2( 1, 0.777658 )
+shape = SubResource( 25 )
+trigger = false
+_update_shape_index = 2
+
+[node name="下中牆" type="StaticBody2D" parent="牆" groups=[
+"wall",
+]]
+
+editor/display_folded = true
+transform/pos = Vector2( 4.47035e-07, 491 )
+input/pickable = false
+shapes/0/shape = SubResource( 26 )
+shapes/0/transform = Matrix32( 10.667, 0, 0, 6.57696, -0.759281, 74.5005 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="牆/下中牆" groups=[
+"sprite",
+]]
+
+transform/pos = Vector2( -0.0098877, 0.515014 )
+texture = ExtResource( 31 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="牆/下中牆"]
+
+transform/pos = Vector2( -0.759281, 74.5005 )
+transform/scale = Vector2( 10.667, 6.57696 )
+shape = SubResource( 26 )
+trigger = false
+_update_shape_index = 0
+
+[node name="燈" type="Node2D" parent="." groups=[
+"sprite",
+]]
+
+[node name="Sprite" type="Sprite" parent="燈"]
+
+z/z = 1100
+texture = ExtResource( 32 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+

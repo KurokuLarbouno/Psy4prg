@@ -14,21 +14,26 @@ var count = 0 #count the exit times
 var random_num #隨機變數
 var red_time#變紅時間
 var slow_time#變慢時間
+var bear_atk_up_time#變慢時間
 var animation_time = 0#動畫時間
+var bananan_animation_time = 30#banana動畫時間
+var vomit_animation_time = 30#vomit動畫時間
 var scary_box_animation_time = 10#動畫時間
 var random_num_flag = false#隨機變數flag
 var range_trap_flag = false#範圍陷阱flag
+var first=false#第一次撿到具
 
 var image = load("res://image/banana.png")#香蕉(trap1)圖
 
 func _ready():
-	if self.get_name() == "trap1":
-		self.get_child(0).set_texture(image)
+#	if self.get_name() == "trap1":
+#		self.get_child(0).set_texture(image)
 	if self.get_name() == "trap2":#加料汽水	
 		self.get_node("Sprite/animsoda").play("Animsoda3")
 	
 	set_fixed_process(true)
 	slow_time = 100000000
+	bear_atk_up_time = 100000000
 	t = 100000000
 	red_time = 100000000
 	connect("body_enter", self, "_on_trap_area_body_enter")#start signal
@@ -39,14 +44,21 @@ func _fixed_process(delta):
 	t +=delta
 	red_time +=1
 	slow_time += delta
+	bear_atk_up_time += delta
 	animation_time+=delta
+	vomit_animation_time+=delta
 	scary_box_animation_time+=delta
+	bananan_animation_time+=delta
 #-----------------------------------------------動畫
 	if self.get_name() == "trap2" && animation_time>1:#加料汽水	
 		animation_time -= 1
 		self.get_node("Sprite/animsoda").play("Animsoda3")
-	
-		
+	if self.get_name() == "trap1" && bananan_animation_time<20 && bananan_animation_time>0.5:#banana
+		self.set_pos(get_node("../trash").get_global_pos())
+		bananan_animation_time = 30 
+	if self.get_name() == "trap" && vomit_animation_time<20 && vomit_animation_time>0.5:#嘔吐物動畫
+		self.set_pos(get_node("../trash").get_global_pos())
+		vomit_animation_time = 30
 #-----------------------------------------------動畫 END
 #-----------------------------------------陷阱效果reset
 	if self.get_name() == "trap3":#驚嚇箱
@@ -62,18 +74,24 @@ func _fixed_process(delta):
 					
 	if(red_time <= 20):
 	#trap effect reset
-		if self.get_name() != "trap2" && self.get_name() != "trap3":
+		if self.get_name() != "trap2" && self.get_name() != "trap3"&& self.get_name() != "trap4":
 			body_save.player_sprite.set_modulate(Color(255/(12.75*red_time),1.0,1.0))#trap effect
+			body_save.get_node("Sprite").set_modulate(Color(255/(12.75*red_time),1.0,1.0))
 		elif self.get_name() == "trap3":
 			for bs in body_save_array:
 				bs.player_sprite.set_modulate(Color(255/(12.75*red_time),1.0,1.0))#trap effect
+				bs.get_node("Sprite").set_modulate(Color(255/(12.75*red_time),1.0,1.0))
 			#body_save_array
 		else:
 			body_save.player_sprite.set_modulate(Color(1.0,1.0,255/(12.75*red_time)))#trap effect
+			body_save.get_node("Sprite").set_modulate(Color(1.0,1.0,255/(12.75*red_time)))
 	elif body_save_array.size() != 0 :
 		body_save_array = []
 	if slow_time >= 3 and slow_time < 4:#變慢復原
 		body_save.MOTION_SPEED = 140
+	if bear_atk_up_time >= 3 and bear_atk_up_time < 4:#攻擊力還原
+		body_save.bullet_dmg/=1.5
+		bear_atk_up_time = 100000
 	#trap effect reset END
 #-----------------------------------------陷阱效果reset END
 	if(t >= 5 && t<6):#陷阱重新生成
@@ -126,6 +144,7 @@ func _on_trap_area_body_enter( body ):
 							remove_index.remove(0)
 						#從生成點編號陣列中去除 END
 						body.add_trap(self.get_name())#把陷阱加入陷阱欄
+						get_owner().get_node("sound").play("撿到道具")
 					else:
 						if trap_start || range_trap_flag:
 							body_save = body
@@ -135,42 +154,71 @@ func _on_trap_area_body_enter( body ):
 #-------------------------------陷阱驚跳箱效果
 							
 							if self.get_name() == "trap3":
+								get_owner().get_node("sound").play("恐怖箱")
 								range_trap_flag = true;
 								trap_switch = !trap_switch
 								body_save_array.append( body ) 
 								self.get_node("CollisionShape2D").set_scale(Vector2(10.0, 10.0))
 								body.player_sprite.set_modulate(Color(255.0,1.0,1.0))
+								body.get_node("Sprite").set_modulate(Color(255.0,1.0,1.0))
 								self.get_node("Sprite/bun").play("bun")
-								body.player_health-=15
+								body.player_health-=5
 								red_time = 0
 								if(body.player_health <= 0):
 									body.player_health = 0
 									body.die = true	
 								scary_box_animation_time = 0
-#-------------------------------陷阱驚跳箱效果END			
+#-------------------------------陷阱驚跳箱效果END	
+#-------------------------------陷阱染色啤酒
+							
+							if self.get_name() == "trap4":
+								body.player_sprite.set_modulate(Color(1.0,1.0,255.0))
+								body.get_node("Sprite").set_modulate(Color(1.0,1.0,255.0))
+								body.player_health+=1
+#-------------------------------陷阱染色啤酒END				
 #-------------------------------陷阱加料汽水
 							
 							if self.get_name() == "trap2":
+								get_owner().get_node("sound").play("吃到汽水")
 								body.player_sprite.set_modulate(Color(1.0,1.0,255.0))
-								body.player_health+=5
+								body.get_node("Sprite").set_modulate(Color(1.0,1.0,255.0))
+								body.player_health+=1
+								body.bullet_dmg*=1.5
+						
+								bear_atk_up_time = 0
 #-------------------------------陷阱加料汽水END						
 							if self.get_name() == "trap":
+								get_owner().get_node("sound").play("踩到嘔吐物")
 								body.player_sprite.set_modulate(Color(255.0,1.0,1.0))
+								body.get_node("Sprite").set_modulate(Color(255.0,1.0,1.0))
+								self.get_node("Sprite/anim").play("Anim")
+								vomit_animation_time = 0
 								slow_time = 0
+								t=0
+								red_time = 0
 								body.MOTION_SPEED = 70
 #-------------------------------陷阱的扣血(嘔吐物？)								
-								body.player_health-=5
+								body.player_health-=2
 								
 								if(body.player_health <= 0):
 									body.player_health = 0
 									body.die = true	
-#-------------------------------陷阱的扣血(嘔吐物？) END
+#-------------------------陷阱的扣血(嘔吐物？) END
+#-------------------------------陷阱banana 
+
 							if self.get_name() == "trap1":
+								get_owner().get_node("sound").play("踩到香蕉")
 								body.player_sprite.set_modulate(Color(255.0,1.0,1.0))
+								body.get_node("Sprite").set_modulate(Color(255.0,1.0,1.0))
 								body.banana_trap_effect_flag = true
+								self.get_node("Sprite/banana").play("banana")
+								t=0
+								red_time = 0
+								bananan_animation_time = 0
+#-------------------------陷阱banana END
 #-----------------------------------------trap effect 陷阱效果發生區END
 #-------------------------------陷阱的回收區
-							if self.get_name() != "trap3":
+							if self.get_name() != "trap3" && self.get_name() != "trap1"&& self.get_name() != "trap":
 								self.set_pos(get_node("../trash").get_global_pos())
 								t=0
 								red_time = 0

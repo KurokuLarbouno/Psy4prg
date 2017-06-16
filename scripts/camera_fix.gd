@@ -19,6 +19,8 @@ func _fixed_process(delta):
 	var p = player_pos + player2_pos
 	var p2 = ((player_pos.x - player2_pos.x)*(player_pos.x - player2_pos.x) + (player2_pos.y - player_pos.y)*(player2_pos.y - player_pos.y))
 	p2 = sqrt(p2)*0.0018
+	if(p2 > 0.5):
+		p2 = 0.5
 	if(p2 < 0.20):
 		p2 = 0.2
 	p /= 2
